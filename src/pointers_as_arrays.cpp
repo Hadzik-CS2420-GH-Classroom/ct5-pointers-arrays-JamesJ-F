@@ -29,9 +29,11 @@ void pointersAsArrays() {
     //   The [] operator is defined for pointers: ptr[i] is just a shorthand
     //   for *(ptr + i). The compiler rewrites it to pointer arithmetic.
     //   This is why arrays and pointers are so interchangeable in C/C++.
+    std::cout << "Pointer access: ptr[0] = " << ptr[0] << std::endl;
 
     // TODO: Print ptr[2] to access the third element through the pointer
     // Expected output: "Pointer access: ptr[2] = 300"
+    std::cout << "Pointer access: ptr[2] = " << ptr[2] << std::endl;
 
     // TODO: Print ptr[4] to access the last element through the pointer
     // Expected output: "Pointer access: ptr[4] = 500"
@@ -42,6 +44,7 @@ void pointersAsArrays() {
     //   undefined behavior. It might crash, return garbage, or seem to
     //   "work" (the worst outcome, because the bug hides). Always track
     //   your array size and stay within bounds.
+    std::cout << "Pointer access: ptr[4] = " << ptr[4] << std::endl;
 
     // --- 2. Iterating using pointer with array syntax ---
     std::cout << "\n--- 2. Looping with Pointer Using [] Syntax ---" << '\n';
@@ -60,6 +63,7 @@ void pointersAsArrays() {
     //   access the same memory. The compiler generates identical code.
     //   The difference is semantic: ptr is a variable (can be reassigned),
     //   while data is a fixed array name (cannot be reassigned).
+    for (int i = 0; i < size; ++i) std::cout << "ptr[" << i << "] = " << ptr[i] << "\n";
 
     // Bonus discussion: Why does this work?
     // ptr[i] is equivalent to *(ptr + i)
